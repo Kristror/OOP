@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Code\Bonuses\InteractiveObject.cs" />
     <Compile Include="Assets\Code\Bonuses\Interface\IFlay.cs" />
+    <Compile Include="Assets\Code\Bonuses\BonusEffects.cs" />
     <Compile Include="Assets\Code\Bonuses\GoodBonus.cs" />
     <Compile Include="Assets\Code\GameController.cs" />
     <Compile Include="Assets\Code\Bonuses\Interface\IInteractable.cs" />
@@ -67,11 +68,11 @@
     <Compile Include="Assets\Code\PlayerCode\PlayerMove.cs" />
     <Compile Include="Assets\Code\Bonuses\Interface\IFlicker.cs" />
     <Compile Include="Assets\Code\Bonuses\BBonusType.cs" />
+    <Compile Include="Assets\Code\PlayerCode\PlayerStatus.cs" />
     <Compile Include="Assets\Code\Bonuses\BadBonus.cs" />
     <Compile Include="Assets\Code\Bonuses\DisplayBonuses.cs" />
     <Compile Include="Assets\Code\Bonuses\GBonusType.cs" />
-    <Compile Include="Assets\Code\Bonuses\BonusEffects.cs" />
-    <Compile Include="Assets\Code\PlayerCode\PlayerStatus.cs" />
+    <Compile Include="Assets\Code\Bonuses\Interaction.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Import\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />

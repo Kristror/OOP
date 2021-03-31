@@ -1,19 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class BonusEffects : MonoBehaviour
 {
     private bool _speedBoost = false;
-    private bool _invincibility = false;
     private bool _slowDown = false;
-    private bool _upsideDown = false;
     private float _speedmult = 2;
-    private PlayerMove _playerMove; 
+    private PlayerMove _playerMove;
     private PlayerStatus _playerStatus;
     private CameraFollow _camera;
     private float _effectTime = 7;
+    #region Alerts
+    public delegate void Action(float time);
 
+    private event Action _functions;
+
+    public void AddListener(Action f)
+    {
+        _functions += f;
+    }
+
+    public void RemoveListener(Action f)
+    {
+        _functions -= f;
+    }
+
+    public void PickUpEffect()
+    {
+        if (_functions != null) _functions(_effectTime);
+    }
+    #endregion
     private void Awake()
     {
         _playerMove = FindObjectOfType<PlayerMove>();
@@ -24,34 +38,34 @@ public class BonusEffects : MonoBehaviour
     {
         _speedBoost = true;
         _playerMove.Speed *= _speedmult;
+        PickUpEffect();
         Invoke("NormalSpeed", _effectTime);
     }
     public void Invincibility()
     {
-        _invincibility = true;
         _playerStatus.invincibility = true;
+        PickUpEffect();
         Invoke("DisInvincibility", _effectTime);
     }
     public void SlowDouwn()
     {
-        _slowDown = true; 
+        _slowDown = true;
         _playerMove.Speed /= _speedmult;
+        PickUpEffect();
         Invoke("NormalSpeed", _effectTime);
     }
     public void UpsideDown()
     {
-        _upsideDown = true;
         _camera.transform.Rotate(new Vector3(0, 0, 180));
+        PickUpEffect();
         Invoke("NormalView", _effectTime);
     }
     public void NormalView()
     {
-        _upsideDown = false;
-        _camera.transform.Rotate(new Vector3(0,0,-180));
+        _camera.transform.Rotate(new Vector3(0, 0, -180));
     }
     public void DisInvincibility()
     {
-        _invincibility = false;
         _playerStatus.invincibility = false;
     }
     public void NormalSpeed()
