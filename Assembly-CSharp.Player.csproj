@@ -56,23 +56,32 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Code\Bonuses\InteractiveObject.cs" />
-    <Compile Include="Assets\Code\Bonuses\Interface\IFlay.cs" />
-    <Compile Include="Assets\Code\Bonuses\BonusEffects.cs" />
-    <Compile Include="Assets\Code\Bonuses\GoodBonus.cs" />
-    <Compile Include="Assets\Code\GameController.cs" />
-    <Compile Include="Assets\Code\Bonuses\Interface\IInteractable.cs" />
-    <Compile Include="Assets\Code\Bonuses\Keys.cs" />
-    <Compile Include="Assets\Code\PlayerCode\CameraFollow.cs" />
-    <Compile Include="Assets\Code\Bonuses\Interface\IRotation.cs" />
-    <Compile Include="Assets\Code\PlayerCode\PlayerMove.cs" />
-    <Compile Include="Assets\Code\Bonuses\Interface\IFlicker.cs" />
-    <Compile Include="Assets\Code\Bonuses\BBonusType.cs" />
+    <Compile Include="Assets\Code\Bonus\Type\BBonusType.cs" />
+    <Compile Include="Assets\Code\Bonus\Key.cs" />
+    <Compile Include="Assets\Code\UI\DisplayEndGame.cs" />
+    <Compile Include="Assets\Code\Interface\IFlay.cs" />
+    <Compile Include="Assets\Code\Bonus\InteractiveObject.cs" />
+    <Compile Include="Assets\Code\Controllers\InputController.cs" />
+    <Compile Include="Assets\Code\Bonus\BadBonus.cs" />
+    <Compile Include="Assets\Code\Controllers\GameController.cs" />
+    <Compile Include="Assets\Code\Interface\IInteractable.cs" />
+    <Compile Include="Assets\Code\UI\DisplayBonuses.cs" />
+    <Compile Include="Assets\Code\Model\PlayerBase.cs" />
+    <Compile Include="Assets\Code\Controllers\CameraController.cs" />
+    <Compile Include="Assets\Code\Interface\IRotation.cs" />
+    <Compile Include="Assets\Code\Model\PlayerMove.cs" />
+    <Compile Include="Assets\Code\Interface\IExecute.cs" />
+    <Compile Include="Assets\Code\Interface\IFlicker.cs" />
+    <Compile Include="Assets\Code\Bonus\Type\GBonusType.cs" />
+    <Compile Include="Assets\Code\Bonus\GoodBonus.cs" />
     <Compile Include="Assets\Code\PlayerCode\PlayerStatus.cs" />
-    <Compile Include="Assets\Code\Bonuses\BadBonus.cs" />
-    <Compile Include="Assets\Code\Bonuses\DisplayBonuses.cs" />
-    <Compile Include="Assets\Code\Bonuses\GBonusType.cs" />
-    <Compile Include="Assets\Code\Bonuses\Interaction.cs" />
+    <Compile Include="Assets\Code\Bonus\BonusEffects.cs" />
+    <Compile Include="Assets\Code\Lists\ListExecuteObject .cs" />
+    <Compile Include="Assets\Code\Reference.cs" />
+    <Compile Include="Assets\Code\EndGame.cs" />
+    <Compile Include="Assets\Code\CheckObject.cs" />
+    <Compile Include="Assets\Code\Lists\ListCheckObject.cs" />
+    <Compile Include="Assets\Code\Interface\ICheck.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Import\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
