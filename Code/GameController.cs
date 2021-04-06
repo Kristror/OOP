@@ -17,6 +17,18 @@ public sealed class GameController : MonoBehaviour
 
     private void Update()
     {
+        Effects();
+        if (!_displayBonuses.GetDisplayText().Equals(""))
+        {
+            Invoke("DisplayEnd", 3);
+        }
+    }
+    private void DisplayEnd()
+    {
+        _displayBonuses.DisplayEnd();
+    }
+    private void Effects()
+    {
         for (var i = 0; i < _interactiveObjects.Length; i++)
         {
             var interactiveObject = _interactiveObjects[i];
@@ -39,13 +51,5 @@ public sealed class GameController : MonoBehaviour
                 rotation.Rotation();
             }
         }
-        if (!_displayBonuses.GetDisplayText().Equals(""))
-        {
-            Invoke("DisplayEnd", 3);
-        }
-    }
-    private void DisplayEnd()
-    {
-        _displayBonuses.DisplayEnd();
     }
 }

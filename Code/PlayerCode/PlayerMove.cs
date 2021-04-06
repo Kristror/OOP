@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,14 @@ public sealed class PlayerMove : MonoBehaviour
 
     private void Start()
     {
-        _rb = GetComponent<Rigidbody>();
+        try
+        {
+            _rb = GetComponent<Rigidbody>();
+        }
+        catch (MissingComponentException)
+        {
+            Debug.Log("Missing RigidBody");
+        }
     }
 
     private void FixedUpdate()
