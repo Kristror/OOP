@@ -60,6 +60,7 @@
     <Compile Include="Assets\Code\Bonus\Key.cs" />
     <Compile Include="Assets\Code\UI\DisplayEndGame.cs" />
     <Compile Include="Assets\Code\Interface\IFlay.cs" />
+    <Compile Include="Assets\Code\UI\Radar.cs" />
     <Compile Include="Assets\Code\Bonus\InteractiveObject.cs" />
     <Compile Include="Assets\Code\Controllers\InputController.cs" />
     <Compile Include="Assets\Code\Lists\ListCheckObject.cs" />
@@ -80,15 +81,16 @@
     <Compile Include="Assets\Code\Interface\IFlicker.cs" />
     <Compile Include="Assets\Code\Bonus\Type\GBonusType.cs" />
     <Compile Include="Assets\Code\Bonus\GoodBonus.cs" />
+    <Compile Include="Assets\Code\Test\MySciptEditor.cs" />
     <Compile Include="Assets\Code\PlayerCode\PlayerStatus.cs" />
+    <Compile Include="Assets\Code\UI\RadarObj.cs" />
     <Compile Include="Assets\Code\Save\SaveDataRepository.cs" />
     <Compile Include="Assets\Code\Interface\ISaveDataRepository.cs" />
     <Compile Include="Assets\Code\Bonus\BonusEffects.cs" />
     <Compile Include="Assets\Code\Interface\IData.cs" />
     <Compile Include="Assets\Code\Lists\ListExecuteObject .cs" />
     <Compile Include="Assets\Code\Reference.cs" />
-    <Compile Include="Assets\Code\UI\Radar.cs" />
-    <Compile Include="Assets\Code\UI\RadarObj.cs" />
+    <Compile Include="Assets\Code\Test\TestEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Import\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
