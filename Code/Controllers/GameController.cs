@@ -55,13 +55,13 @@ public sealed class GameController : MonoBehaviour, IDisposable
                 {
                     badBonus.OnCaughtPlayerChange += _bonusEffects.SlowDown;
                     badBonus.OnCaughtPlayerChange += _displayBonuses.DisplayBSpeed;
-                    badBonus.OnCaughtPlayerChange += ClearON;
+                    badBonus.OnCaughtPlayerChange += ClearDisplay;
                 }
                 if (badBonus.Type == BBonusType.UpsideDown)
                 {
                     badBonus.OnCaughtPlayerChange += _bonusEffects.UpsideDown;
                     badBonus.OnCaughtPlayerChange += _displayBonuses.DisplayBUpsideDown;
-                    badBonus.OnCaughtPlayerChange += ClearON;
+                    badBonus.OnCaughtPlayerChange += ClearDisplay;
                 }
                 if (badBonus.Type == BBonusType.Death)
                 {
@@ -77,20 +77,20 @@ public sealed class GameController : MonoBehaviour, IDisposable
                 {
                     goodBonus.OnPlayerInteraction += _bonusEffects.SpeedBoost;
                     goodBonus.OnPlayerInteraction += _displayBonuses.DisplayGSpeed;
-                    goodBonus.OnPlayerInteraction += ClearON;
+                    goodBonus.OnPlayerInteraction += ClearDisplay;
                 }
                 if (goodBonus.Type == GBonusType.Invincibility)
                 {
                     goodBonus.OnPlayerInteraction += _bonusEffects.Invincibility;
                     goodBonus.OnPlayerInteraction += _displayBonuses.DisplayGInvincibility;
-                    goodBonus.OnPlayerInteraction += ClearON;
+                    goodBonus.OnPlayerInteraction += ClearDisplay;
                 }
             }
             
             if(o is Key key)
             {
                 key.OnPlayerInteraction += _displayBonuses.DisplayKey;
-                key.OnPlayerAction += ClearON;
+                key.OnPlayerAction += ClearDisplay;
             } 
         }
     }
@@ -105,7 +105,7 @@ public sealed class GameController : MonoBehaviour, IDisposable
                 endgame.OnPlayerTrueInter += ActiveButton;
 
                 endgame.OnPlayerFalseInter += _displayBonuses.DisplayNotEnough;
-                endgame.OnPlayerFalseInter += ClearON;
+                endgame.OnPlayerFalseInter += ClearDisplay;
             }
         }
     }
@@ -113,7 +113,7 @@ public sealed class GameController : MonoBehaviour, IDisposable
     {
         _reference.RestartButton.gameObject.SetActive(true);
     }
-    public void ClearON()
+    public void ClearDisplay()
     {
         Invoke("Clear", _bonusEffects.EffectTime);
     }
@@ -185,7 +185,7 @@ public sealed class GameController : MonoBehaviour, IDisposable
             if (o is Key key)
             {
                 key.OnPlayerInteraction -= _displayBonuses.DisplayKey;
-                key.OnPlayerAction -= ClearON;
+                key.OnPlayerAction -= ClearDisplay;
             }
         }
         foreach (var o in _checkObject)
@@ -197,7 +197,7 @@ public sealed class GameController : MonoBehaviour, IDisposable
                 endgame.OnPlayerTrueInter -= ActiveButton;
 
                 endgame.OnPlayerFalseInter -= _displayBonuses.DisplayNotEnough;
-                endgame.OnPlayerFalseInter -= ClearON;
+                endgame.OnPlayerFalseInter -= ClearDisplay;
             }
         }
     }
